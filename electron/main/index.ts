@@ -45,17 +45,21 @@ async function createWindow() {
   win = new BrowserWindow({
     title: 'Main window',
     icon: join(process.env.PUBLIC, 'favicon.ico'),
+    width: 1024,
+    height: 800,
+    show:true,
     webPreferences: {
       preload,
+      devTools: false,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
       // Consider using contextBridge.exposeInMainWorld
       // Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
       nodeIntegration: true,
       contextIsolation: false,
     },
-    fullscreen:false,
-    autoHideMenuBar:true,
-    frame:false,
+    fullscreen: false,
+    autoHideMenuBar: true,
+    frame: false,
   })
 
   if (url) { // electron-vite-vue#298
