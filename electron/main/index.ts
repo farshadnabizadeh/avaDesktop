@@ -53,6 +53,8 @@ async function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
+    fullscreen:false,
+    autoHideMenuBar:true,
   })
 
   if (url) { // electron-vite-vue#298
